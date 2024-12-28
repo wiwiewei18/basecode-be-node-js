@@ -21,8 +21,8 @@ This Node.js base code project provides a foundation for building server-side ap
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/wiwiewei18/basecode-be-node-js.git
-   cd nodejs-basecode
+   git clone https://github.com/wiwiewei18/be-mvcs-basecode.git
+   cd be-mvcs-basecode
    ```
 
 2. **Install dependencies:**
@@ -64,8 +64,10 @@ This Node.js base code project provides a foundation for building server-side ap
 
 - **Node.js:** `>= 16.15.0`
 - **Express:** `^4.19.2`
-- **Dotenv:** `^16.4.5`
-- **Nodemon:** `^3.1.4` (for development)
+- **bcryptjs:** `^2.4.3`,
+- **mongoose:** `^8.4.4`,
+- **jest:** `^29.7.0`
+- **supertest:** `^7.0.0`
 
 Additional dependencies can be added as per the project requirements.
 
