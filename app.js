@@ -1,5 +1,5 @@
 const express = require("express");
-const rateLimit = require("express-rate-limit");
+// const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
 const sanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
@@ -12,14 +12,14 @@ const errorController = new ErrorController();
 
 const app = express();
 
-app.use(
-  "/api",
-  rateLimit({
-    max: 100,
-    windowMs: 60 * 60 * 1000,
-    message: "Too many requests from this IP, please try again in an hour!",
-  })
-);
+// app.use(
+//   "/api",
+//   rateLimit({
+//     max: 100,
+//     windowMs: 60 * 60 * 1000,
+//     message: "Too many requests from this IP, please try again in an hour!",
+//   })
+// );
 app.use(helmet());
 app.use(express.json({ limit: "10kb" }));
 app.use(sanitize());
