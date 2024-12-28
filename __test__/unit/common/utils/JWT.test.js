@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const JWT = require("../../../src/common/utils/JWT");
+const JWT = require("../../../../src/common/utils/JWT");
 
 jest.mock("jsonwebtoken");
 
