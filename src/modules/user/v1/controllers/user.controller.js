@@ -1,6 +1,7 @@
 const UserServices = require("../services/user.services");
-const AsyncErrorHandler = require("../utils/AsyncErrorHandler");
-const BaseController = require("./base.controller");
+
+const BaseController = require("../../../../common/controllers/base.controller");
+const AsyncErrorHandler = require("../../../../common/utils/AsyncErrorHandler");
 
 class UserController extends BaseController {
   constructor() {

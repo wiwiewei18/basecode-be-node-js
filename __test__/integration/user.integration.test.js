@@ -3,8 +3,8 @@ const { MongoMemoryServer } = require("mongodb-memory-server");
 const mongoose = require("mongoose");
 
 const app = require("../../app");
-const JWT = require("../../src/utils/JWT");
-const AuthService = require("../../src/services/auth.services");
+const JWT = require("../../src/common/utils/JWT");
+const AuthService = require("../../src/modules/auth/v1/services/auth.services");
 
 describe("User Router", () => {
   let mongoDBMemoryServer;
@@ -56,10 +56,10 @@ describe("User Router", () => {
     await mongoDBMemoryServer.stop();
   });
 
-  describe("GET /api/user/", () => {
+  describe("GET /api/v1/user/", () => {
     it(`should return 200 and all users data when given a valid param (empty)`, async () => {
       const { statusCode, body } = await supertest(app)
-        .get("/api/user/")
+        .get("/api/v1/user/")
         .set("Authorization", `Bearer ${jwt}`);
 
       expect(statusCode).toBe(200);
@@ -83,7 +83,7 @@ describe("User Router", () => {
 
     it(`should return 200 and 4 users data when given a valid param (page = 1, limit = 4)`, async () => {
       const { statusCode, body } = await supertest(app)
-        .get("/api/user/?page=1&limit=4")
+        .get("/api/v1/user/?page=1&limit=4")
         .set("Authorization", `Bearer ${jwt}`);
 
       expect(statusCode).toBe(200);
@@ -107,7 +107,7 @@ describe("User Router", () => {
 
     it(`should return 200 and 3 users data when given a valid param (page = 2, limit = 4)`, async () => {
       const { statusCode, body } = await supertest(app)
-        .get("/api/user/?page=2&limit=4")
+        .get("/api/v1/user/?page=2&limit=4")
         .set("Authorization", `Bearer ${jwt}`);
 
       expect(statusCode).toBe(200);
@@ -131,7 +131,7 @@ describe("User Router", () => {
 
     it(`should return 200 and all users data (only name field) when given a valid param (fields = name)`, async () => {
       const { statusCode, body } = await supertest(app)
-        .get("/api/user/?fields=name")
+        .get("/api/v1/user/?fields=name")
         .set("Authorization", `Bearer ${jwt}`);
 
       expect(statusCode).toBe(200);
@@ -151,7 +151,7 @@ describe("User Router", () => {
 
     it(`should return 200 and 4 users data (only containing kuro) when given a valid param (search = kuro)`, async () => {
       const { statusCode, body } = await supertest(app)
-        .get("/api/user/?search=kuro")
+        .get("/api/v1/user/?search=kuro")
         .set("Authorization", `Bearer ${jwt}`);
 
       expect(statusCode).toBe(200);
@@ -175,7 +175,7 @@ describe("User Router", () => {
 
     it(`should return 200 and 1 user data when given a valid param (name = kuro)`, async () => {
       const { statusCode, body } = await supertest(app)
-        .get("/api/user/?name=kuro")
+        .get("/api/v1/user/?name=kuro")
         .set("Authorization", `Bearer ${jwt}`);
 
       expect(statusCode).toBe(200);

@@ -24,7 +24,7 @@ describe("Auth Router", () => {
     await mongoDBMemoryServer.stop();
   });
 
-  describe("POST /api/auth/sign-up", () => {
+  describe("POST /api/v1/auth/sign-up", () => {
     it(`should return 201 and created user data when given a valid payload`, async () => {
       const payload = {
         name: "kuro",
@@ -34,7 +34,7 @@ describe("Auth Router", () => {
       };
 
       const { statusCode, body } = await supertest(app)
-        .post("/api/auth/sign-up")
+        .post("/api/v1/auth/sign-up")
         .send(payload);
 
       expect(statusCode).toBe(201);
@@ -63,7 +63,7 @@ describe("Auth Router", () => {
       };
 
       const { statusCode, body } = await supertest(app)
-        .post("/api/auth/sign-up")
+        .post("/api/v1/auth/sign-up")
         .send(payload);
 
       expect(statusCode).toBe(400);
@@ -80,7 +80,7 @@ describe("Auth Router", () => {
       };
 
       const { statusCode, body } = await supertest(app)
-        .post("/api/auth/sign-up")
+        .post("/api/v1/auth/sign-up")
         .send(payload);
 
       expect(statusCode).toBe(400);
@@ -97,7 +97,7 @@ describe("Auth Router", () => {
       };
 
       const { statusCode, body } = await supertest(app)
-        .post("/api/auth/sign-up")
+        .post("/api/v1/auth/sign-up")
         .send(payload);
 
       expect(statusCode).toBe(400);
@@ -114,7 +114,7 @@ describe("Auth Router", () => {
       };
 
       const { statusCode, body } = await supertest(app)
-        .post("/api/auth/sign-up")
+        .post("/api/v1/auth/sign-up")
         .send(payload);
 
       expect(statusCode).toBe(400);
@@ -128,7 +128,7 @@ describe("Auth Router", () => {
       const payload = {};
 
       const { statusCode, body } = await supertest(app)
-        .post("/api/auth/sign-up")
+        .post("/api/v1/auth/sign-up")
         .send(payload);
 
       expect(statusCode).toBe(400);
@@ -139,7 +139,7 @@ describe("Auth Router", () => {
     });
   });
 
-  describe("POST /api/auth/sign-in", () => {
+  describe("POST /api/v1/auth/sign-in", () => {
     it(`should return 200, signed in user data and token when given a valid payload`, async () => {
       const payload = {
         email: "kuro@mail.com",
@@ -147,7 +147,7 @@ describe("Auth Router", () => {
       };
 
       const { statusCode, body } = await supertest(app)
-        .post("/api/auth/sign-in")
+        .post("/api/v1/auth/sign-in")
         .send(payload);
 
       expect(statusCode).toBe(200);
@@ -170,7 +170,7 @@ describe("Auth Router", () => {
       const payload = {};
 
       const { statusCode, body } = await supertest(app)
-        .post("/api/auth/sign-in")
+        .post("/api/v1/auth/sign-in")
         .send(payload);
 
       expect(statusCode).toBe(400);
@@ -185,7 +185,7 @@ describe("Auth Router", () => {
       };
 
       const { statusCode, body } = await supertest(app)
-        .post("/api/auth/sign-in")
+        .post("/api/v1/auth/sign-in")
         .send(payload);
 
       expect(statusCode).toBe(400);
@@ -200,7 +200,7 @@ describe("Auth Router", () => {
       };
 
       const { statusCode, body } = await supertest(app)
-        .post("/api/auth/sign-in")
+        .post("/api/v1/auth/sign-in")
         .send(payload);
 
       expect(statusCode).toBe(400);

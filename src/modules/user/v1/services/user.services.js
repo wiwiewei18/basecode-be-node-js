@@ -1,7 +1,7 @@
-const User = require("../models/user.model");
-const HttpStatusCode = require("../constants/HttpStatusCode");
-const CustomError = require("../utils/CustomError");
-const Pagination = require("../utils/Pagination");
+const User = require("../../../../common/models/user.model");
+const HttpStatusCode = require("../../../../common/constants/HttpStatusCode");
+const CustomError = require("../../../../common/utils/CustomError");
+const Pagination = require("../../../../common/utils/Pagination");
 
 class UserService {
   constructor() {

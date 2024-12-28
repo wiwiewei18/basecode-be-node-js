@@ -1,7 +1,7 @@
-const User = require("../models/user.model");
-const HttpStatusCode = require("../constants/HttpStatusCode");
-const CustomError = require("../utils/CustomError");
-const JWT = require("../utils/JWT");
+const User = require("../../../../common/models/user.model");
+const HttpStatusCode = require("../../../../common/constants/HttpStatusCode");
+const CustomError = require("../../../../common/utils/CustomError");
+const JWT = require("../../../../common/utils/JWT");
 
 class AuthService {
   constructor() {

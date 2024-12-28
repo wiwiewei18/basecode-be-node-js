@@ -1,5 +1,6 @@
 const HttpStatusCode = require("../constants/HttpStatusCode");
 const ResponseStatus = require("../constants/ResponseStatus");
+
 const CustomError = require("../utils/CustomError");
 
 class ErrorController {

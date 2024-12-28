@@ -1,6 +1,7 @@
 const AuthServices = require("../services/auth.services");
-const AsyncErrorHandler = require("../utils/AsyncErrorHandler");
-const BaseController = require("./base.controller");
+
+const BaseController = require("../../../../common/controllers/base.controller");
+const AsyncErrorHandler = require("../../../../common/utils/AsyncErrorHandler");
 
 class AuthController extends BaseController {
   constructor() {

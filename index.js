@@ -1,7 +1,7 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
 
-const ErrorController = require("./src/controllers/error.controller");
+const ErrorController = require("./src/common/controllers/error.controller");
 const errorController = new ErrorController();
 
 process.on("uncaughtException", errorController.handleUncaughtException);
